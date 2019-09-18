@@ -1,1 +1,4 @@
-print("")
+print("(\___/)")
+print(" \* */")
+print("  \ /")
+print("   o")
