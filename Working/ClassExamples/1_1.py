@@ -11,3 +11,5 @@ print("His pants are", colour)
 length = 16
 width = 20
 print("The dimensions of the yard are", length,"by", width)
+color = "black"
+print("His pants are", color)
