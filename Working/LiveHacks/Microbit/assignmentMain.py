@@ -16,39 +16,24 @@ Created:    24/10/2019
 ------------------------------------------------------------------------------
 
 '''
-
- 
-
 from microbit import *
-
 import music
 
- 
-
 count = 0
-
 direction = 'North'
-
 Buzzer_pin = pin0
-
 LED_pin = pin1
 
- 
 
 def display_count():
-
     display.scroll(str(count))
 
- 
 
 def increment_count():
-
     count = count + 1
 
- 
 
 def get_heading():
-
     angle = compass.heading()
 
     if (angle == 0):
@@ -83,15 +68,11 @@ def get_heading():
 
     LED_pin.write_digital(0)
 
- 
 
 def reset_count():
-
     count = 0
-
     music.play('f3:4', pin=Buzzer_pin)
 
- 
 
 def button_clicks():
 
@@ -103,7 +84,6 @@ def button_clicks():
 
         get_heading()
 
- 
 
 def main():
 
@@ -117,10 +97,5 @@ def main():
 
         button_clicks()
 
-            
 
 main()
-
- 
-
-
