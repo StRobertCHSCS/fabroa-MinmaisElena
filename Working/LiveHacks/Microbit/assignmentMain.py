@@ -23,7 +23,6 @@ import music
 count = 0
 direction = 'North'
 Buzzer_pin = pin0
-
 LED_pin = pin1
 
 
@@ -58,6 +57,7 @@ def get_heading():
 
 def reset_count():
     global count
+    count = 0
     music.play('f3:1', pin=Buzzer_pin)
     main()
 
