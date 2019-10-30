@@ -28,14 +28,12 @@ LED_pin = pin1
 
 
 def display_count():
-    display.scroll(str(count))
+    display.scroll(int(count))
 
 
 def increment_count():
     global count
-
-
-count += 1
+    count += 1
 
 
 def get_heading():
@@ -53,7 +51,6 @@ def get_heading():
         direction = 'South'
     else:
         direction = 'Northwest'
-
     LED_pin.write_digital(1)
     display.scroll(str(direction))
     LED_pin.write_digital(0)
@@ -61,47 +58,30 @@ def get_heading():
 
 def reset_count():
     global count
-
-
-global Buzzer_pin
-count = 0
-music.play('f3:1', pin=Buzzer_pin)
+    music.play('f3:1', pin=Buzzer_pin)
+    main()
 
 
 def button_clicks():
-    if(button_a.is_pressed()):
+    if button_a.is_pressed():
         reset_count()
-    if(button_b.is_pressed()):
+    elif button_b.is_pressed():
         get_heading()
+        main()
 
 
 def main():
     while(True):
         display_count()
-        if(accelerometer.is_gesture('shake')):
+        if accelerometer.was_gesture('shake'):
             increment_count()
         button_clicks()    
 
 
 main()
-global Buzzer_pin
+Buzzer_pin = "global"
 count = 0
 music.play('f3:1', pin=Buzzer_pin)
-
-
-def button_clicks():
-    if(button_a.is_pressed()):
-        reset_count()
-    if(button_b.is_pressed()):
-        get_heading()
-
-
-def main():
-    while(True):
-        display_count()
-        if(accelerometer.is_gesture('shake')):
-            increment_count()
-        button_clicks()
 
 
 main()
