@@ -27,7 +27,7 @@ LED_pin = pin1
 
 
 def display_count():
-    display.scroll(int(count))
+    display.scroll(str(count))
 
 
 def increment_count():
@@ -56,9 +56,9 @@ def get_heading():
 
 
 def reset_count():
-    global count
     count = 0
     music.play('f3:1', pin=Buzzer_pin)
+    display.scroll(int(count))
     main()
 
 
@@ -80,8 +80,3 @@ def main():
 
 main()
 Buzzer_pin = "global"
-count = 0
-music.play('f3:1', pin=Buzzer_pin)
-
-
-main()
