@@ -56,7 +56,7 @@ def get_heading():
 
 
 def reset_count():
-    count = 0
+    global count = 0
     music.play('f3:1', pin=Buzzer_pin)
     display.scroll(int(count))
     main()
