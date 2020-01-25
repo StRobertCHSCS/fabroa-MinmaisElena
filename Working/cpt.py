@@ -20,7 +20,7 @@ led_pin = pin2
  
 while True:
     if moisture_sensor_pin.read_analog() < 50:
-        music.play('b3:1', pin=Buzzer_pin)
+        music.play('b3:1', pin = buzzer_pin)
         led_pin.write_digital(0)
         time.sleep(0.1)
         led_pin.write_digital(1)
